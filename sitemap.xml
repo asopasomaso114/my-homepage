@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/2000/sitemaps/schemas/sitemap/0.9">
+  <!-- ★差し替え: YOUR_DOMAIN を実際のドメインに書き換えてください -->
+  <url>
+    <loc>https://YOUR_DOMAIN/</loc>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
