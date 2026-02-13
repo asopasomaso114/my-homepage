@@ -10,26 +10,13 @@
 // title は「問い・成果物」が伝わる表現にしてください。
 const works = [
   {
-    title: "流域の土地利用は沿岸生態系をどう変えるか？ — 多変量データによる因果解析",
+    title: "準備中",
     description:
-      "陸域からの栄養塩負荷が沿岸ベントスに与える影響を、ベイジアンネットワークで定量化。流域スケールの環境管理に示唆を与える研究。",
-    tags: ["ベイジアンネットワーク", "沿岸生態学", "GIS"],
+      "準備中",
+    tags: ["準備中", "準備中", "準備中"],
     url: "https://github.com/YOUR_USERNAME/project-watershed",
   },
-  {
-    title: "マガキの成長は水温でどこまで予測できるか？ — DEBモデルの適用",
-    description:
-      "Dynamic Energy Budget モデルを用いて、水温変動下におけるマガキの成長・繁殖パラメータを推定。養殖管理への応用可能性を検討。",
-    tags: ["DEB モデル", "マガキ", "数理生態学"],
-    url: "https://github.com/YOUR_USERNAME/project-deb-oyster",
-  },
-  {
-    title: "環境データから因果構造を学習する — ベイジアンネットワーク構造学習の比較",
-    description:
-      "スコアベース・制約ベース・ハイブリッドの3手法を環境データに適用し、推定精度と計算コストを比較した方法論研究。",
-    tags: ["Python", "因果推論", "構造学習"],
-    url: "https://github.com/YOUR_USERNAME/project-bn-learning",
-  },
+
 ];
 
 // ============================================================
@@ -49,18 +36,16 @@ function renderWorks() {
     <article class="work-card reveal">
       <h3>${escapeHtml(w.title)}</h3>
       <p>${escapeHtml(w.description)}</p>
-      ${
-        w.tags && w.tags.length
+      ${w.tags && w.tags.length
           ? `<div class="work-tags">${w.tags
-              .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
-              .join("")}</div>`
+            .map((t) => `<span class="tag">${escapeHtml(t)}</span>`)
+            .join("")}</div>`
           : ""
-      }
-      ${
-        w.url
+        }
+      ${w.url
           ? `<a href="${escapeAttr(w.url)}" class="card-link" target="_blank" rel="noopener noreferrer">詳しく見る</a>`
           : ""
-      }
+        }
     </article>`
     )
     .join("");
