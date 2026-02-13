@@ -47,6 +47,33 @@
 | `wrangler deploy` を使った | **使わない**。Pages は Git 連携のみ |
 | Build command が空欄 | `exit 0` を入力する（空欄だとエラー） |
 
+### 「Hello World」や別のページが表示される場合
+
+Workers の設定がこのドメインに競合している可能性があります。
+
+**確認手順：**
+
+1. **Workers の Routes を確認**
+   - Cloudflare ダッシュボード → Workers & Pages → 対象の Worker を選択
+   - Settings → Domains & Routes を開く
+   - 自分のドメイン（例: `example.com/*`）が Routes に登録されていたら **削除**
+
+2. **Workers の Custom Domain を確認**
+   - Workers & Pages → 対象の Worker → Settings → Domains & Routes
+   - Custom domain にこのドメインが設定されていたら **削除**
+
+3. **Pages の Custom Domain を確認**
+   - Workers & Pages → Pages タブ → 対象のプロジェクトを選択
+   - Custom domains タブでドメインが**追加されているか**確認
+   - 追加されていなければ「Set up a custom domain」から追加
+
+4. **DNS レコードを確認**
+   - Cloudflare ダッシュボード → DNS → Records
+   - ドメインの CNAME レコードが `<project-name>.pages.dev` を向いているか確認
+   - Workers 用の A/AAAA レコードが残っていたら削除
+
+> **ポイント**: Workers と Pages で同じドメインを使うと Workers が優先されます。Pages で公開するなら Workers 側のドメイン設定を全て外してください。
+
 ---
 
 ## デスクトップ / モバイルの表示
