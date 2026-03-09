@@ -25,19 +25,19 @@ const presentations = [
   {
     title: "Environmental gradients and feed quality control pacific oyster growth in coastal japan",
     conference: "The International Society for ECOLOGICAL MODELLING GLOBAL CONFERENCE 2025 (ISEM 2025)",
-    type: "Oral / Poster",
+    type: "Poster",
     date: "2025",
   },
   {
     title: "Linking Coastal Environmental Drivers to Pacific Oyster Condition via Causal Analysis with Bayesian Networks",
     conference: "Ocean Science Meeting 2026 (OSM 2026)",
-    type: "Oral / Poster",
+    type: "Poster",
     date: "2026",
   },
   {
     title: "ベイジアンネットワークに基づく、マガキ成育・体組成に対する環境因子の影響の解析",
     conference: "第60回 日本水環境学会年会",
-    type: "口頭発表",
+    type: "口頭発表およびポスター発表",
     date: "2026",
   },
 ];
@@ -85,7 +85,7 @@ function renderPresentations() {
   list.innerHTML = presentations
     .map(
       (p) => `
-    <li class="presentation-item reveal">
+    <li class="presentation-item">
       <span class="presentation-date">${escapeHtml(p.date)}</span>
       <div class="presentation-body">
         <p class="presentation-title">${escapeHtml(p.title)}</p>
