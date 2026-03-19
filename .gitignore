@@ -1,0 +1,3 @@
+# Open Badge JSON (contains personal data)
+*.json
+!_routes.json

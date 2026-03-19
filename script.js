@@ -51,7 +51,12 @@ const certifications = [
     issuer: "netlearning.co.jp",
     issuedOn: "2026-03-19",
     imageUrl: "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/dmZGRmowN1BiNEdMSytIaGhaQXZrZz09/image",
-    verifyUrl: "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/dmZGRmowN1BiNEdMSytIaGhaQXZrZz09",
+  },
+  {
+    name: "JDLA Deep Learning for ENGINEER (E資格)",
+    issuer: "日本ディープラーニング協会 (JDLA)",
+    issuedOn: "2026",
+    imageUrl: "engineer2026%231_regular.svg",
   },
 ];
 
@@ -120,15 +125,14 @@ function renderCertifications() {
   grid.innerHTML = certifications
     .map(
       (c) => `
-    <a class="cert-card" href="${escapeAttr(c.verifyUrl)}" target="_blank" rel="noopener noreferrer">
+    <div class="cert-card">
       <img class="cert-badge-img" src="${escapeAttr(c.imageUrl)}" alt="${escapeAttr(c.name)} バッジ画像" loading="lazy" />
       <div class="cert-info">
         <p class="cert-name">${escapeHtml(c.name).replace(/\n/g, '<br>')}</p>
         <p class="cert-issuer">発行: ${escapeHtml(c.issuer)}</p>
         <p class="cert-date">取得日: ${escapeHtml(c.issuedOn)}</p>
-        <span class="cert-verify-link">バッジを検証</span>
       </div>
-    </a>`
+    </div>`
     )
     .join("");
 }

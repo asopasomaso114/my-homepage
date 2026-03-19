@@ -672,15 +672,6 @@ a:hover {
   border-radius: var(--radius);
   padding: 24px;
   transition: transform var(--transition), box-shadow var(--transition);
-  text-decoration: none;
-  color: inherit;
-}
-
-.cert-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px var(--color-card-shadow);
-  border-color: var(--color-accent);
-  color: inherit;
 }
 
 .cert-badge-img {
@@ -716,20 +707,6 @@ a:hover {
   font-size: 0.78rem;
   color: var(--color-accent);
   font-weight: 600;
-}
-
-.cert-verify-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--color-accent);
-  margin-top: 6px;
-}
-
-.cert-verify-link::after {
-  content: " →";
 }
 
 /* ============================================================
