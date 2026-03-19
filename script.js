@@ -56,7 +56,7 @@ const certifications = [
     name: "JDLA Deep Learning for ENGINEER (E資格)",
     issuer: "日本ディープラーニング協会 (JDLA)",
     issuedOn: "2026",
-    imageUrl: "engineer2026%231_regular.svg",
+    imageUrl: "engineer2026_1_regular.svg",
   },
 ];
 
