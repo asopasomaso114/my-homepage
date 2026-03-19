@@ -39,6 +39,19 @@ const presentations = [
     conference: "第60回 日本水環境学会年会",
     type: "口頭発表およびポスター発表",
     date: "2026",
+    award: "🏆 クリタ賞受賞！！",
+  },
+];
+
+// ─── Certifications (デジタルバッジ) データ ────────────────────────────
+// Open Badges v2 JSON ファイルからのデータ
+const certifications = [
+  {
+    name: "高度情報人材MCプログラム\nAdvanced Information Leader MC Program",
+    issuer: "netlearning.co.jp",
+    issuedOn: "2026-03-19",
+    imageUrl: "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/dmZGRmowN1BiNEdMSytIaGhaQXZrZz09/image",
+    verifyUrl: "https://nlp.netlearning.co.jp/api/v1.0/openbadge/v2/Assertion/dmZGRmowN1BiNEdMSytIaGhaQXZrZz09",
   },
 ];
 
@@ -93,6 +106,29 @@ function renderPresentations() {
         <span class="tag presentation-type">${escapeHtml(p.type)}</span>
       </div>
     </li>`
+    )
+    .join("");
+}
+
+/**
+ * Certifications カードを生成して #certifications-grid に挿入
+ */
+function renderCertifications() {
+  const grid = document.getElementById("certifications-grid");
+  if (!grid) return;
+
+  grid.innerHTML = certifications
+    .map(
+      (c) => `
+    <a class="cert-card" href="${escapeAttr(c.verifyUrl)}" target="_blank" rel="noopener noreferrer">
+      <img class="cert-badge-img" src="${escapeAttr(c.imageUrl)}" alt="${escapeAttr(c.name)} バッジ画像" loading="lazy" />
+      <div class="cert-info">
+        <p class="cert-name">${escapeHtml(c.name).replace(/\n/g, '<br>')}</p>
+        <p class="cert-issuer">発行: ${escapeHtml(c.issuer)}</p>
+        <p class="cert-date">取得日: ${escapeHtml(c.issuedOn)}</p>
+        <span class="cert-verify-link">バッジを検証</span>
+      </div>
+    </a>`
     )
     .join("");
 }
@@ -224,6 +260,7 @@ function initActiveNav() {
 document.addEventListener("DOMContentLoaded", () => {
   renderWorks();
   renderPresentations();
+  renderCertifications();
   initMobileNav();
   initScrollReveal();
   initActiveNav();

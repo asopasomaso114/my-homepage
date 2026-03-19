@@ -626,6 +626,112 @@ a:hover {
   padding: 3px 10px;
 }
 
+/* --- Award Badge --- */
+.award-badge {
+  display: inline-block;
+  color: #DC2626;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  padding: 4px 14px;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1.5px solid rgba(220, 38, 38, 0.25);
+  border-radius: 6px;
+  animation: award-pulse 2s ease-in-out infinite;
+}
+
+@keyframes award-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* ============================================================
+   Certifications
+   ============================================================ */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  text-decoration: none;
+  color: inherit;
+}
+
+.cert-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--color-card-shadow);
+  border-color: var(--color-accent);
+  color: inherit;
+}
+
+.cert-badge-img {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: contain;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+}
+
+.cert-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cert-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.cert-issuer {
+  font-size: 0.82rem;
+  color: var(--color-text-sub);
+  margin-bottom: 4px;
+}
+
+.cert-date {
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.cert-verify-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 6px;
+}
+
+.cert-verify-link::after {
+  content: " →";
+}
+
 /* ============================================================
    Contact
    ============================================================ */
