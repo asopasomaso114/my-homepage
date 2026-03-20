@@ -14,7 +14,7 @@ const works = [
     description:
       "準備中",
     tags: ["準備中", "準備中", "準備中"],
-    url: "https://github.com/YOUR_USERNAME/project-watershed",
+    url: "https://github.com/asopasomaso114",
   },
 
 ];
