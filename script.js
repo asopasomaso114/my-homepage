@@ -109,6 +109,7 @@ function renderPresentations() {
         <p class="presentation-title">${escapeHtml(p.title)}</p>
         <p class="presentation-conference">${escapeHtml(p.conference)}</p>
         <span class="tag presentation-type">${escapeHtml(p.type)}</span>
+        ${p.award ? `<span class="award-badge">${escapeHtml(p.award)}</span>` : ""}
       </div>
     </li>`
     )
